@@ -1,39 +1,45 @@
 <template>
-     <main>
-   <div>
-  <p class="text1">Task Board</p>
-  <p class="text1">Current Tasks</p>
-</div>
-<div>
-<input type="text" 
-v-model="newTask" 
-placeholder="Add some task homie" 
-@keypress.enter = "addTask"/>
-<button @click="addTask">Add</button>
-</div>
-<div>
-  <Tasks
-  v-for = "(task,i) in $store.state.tasks"
-  :key = "i"
-  :task  = "task"/>
-</div>
-
-</main>
+  <v-main>
+    <v-container class="task-board">
+      <div class="todolist">
+      <h1 class="todolist-title">Vue ToDo List</h1>
+      </div>
+      <v-row>
+        <v-col cols="12">
+          <v-card>
+            <v-container class="main-container">
+            <TotalTaskCount
+            />
+            </v-container>
+            <v-card-text>
+              <v-container class="tasks-container">
+              <Tasks
+                v-for="(task, i) in $store.state.tasks"
+                :key="i"
+                :task="task"
+              />
+            </v-container>
+            <v-container class="input-field">
+            <v-text-field 
+                v-model="newTask"
+                label="Add Task Here"
+                @keyup.enter="addTask"
+                variant="outlined"
+                ></v-text-field>
+            </v-container>
+            </v-card-text>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-main>
 </template>
-
 <script>
 export default {
   data(){
     return{
       newTask:''
   }
-  },
-  created() {
-    // Fetch tasks from local storage and initialize component data
-    const tasks = localStorage.getItem('tasks');
-    if (tasks) {
-      this.$store.commit('SET_TASKS', JSON.parse(tasks));
-    }
   },
 methods:{
     addTask(){

@@ -1,11 +1,23 @@
-<template> 
-  <div :class="`task ${task.done ? 'is-complete' : ''}`">
-    <div class="content">{{ task.content }}</div>
-        <div class="button">
-            <button @click="toggleDone">{{ task.done ? 'Undo': 'Done' }}</button>
-            <button @click="removeTask">Delete</button>
-        </div>
-  </div>
+<template>
+  <v-app>
+    <div :class="`task ${task.done ? 'is-complete' : ''}`">
+      <v-container>
+        <v-row class="data-column" >
+          <v-col class ="data-container" cols="12">
+            <v-col cols ="6" class="content">{{ task.content }}</v-col>
+            <v-col cols ="6" class="text-right" >
+              <button @click="toggleDone">
+                <v-icon>{{ task.done ? 'mdi-check-circle' : 'mdi-check-circle' }}</v-icon>
+              </button>
+              <button @click="removeTask">
+                <v-icon>mdi-alpha-x-circle</v-icon>
+              </button>
+            </v-col>
+          </v-col>
+        </v-row>
+      </v-container>
+    </div>  
+  </v-app>
 </template>
 
 <script>
@@ -22,7 +34,7 @@ export default {
     },
     updateLocalStorage() {
       localStorage.setItem('tasks', JSON.stringify(this.$store.state.tasks));
-    },
+    }
   },
   watch: {
     task: {

@@ -1,0 +1,95 @@
+.task.is-complete {
+    text-decoration: line-through;
+}
+
+.container.task-board {
+    margin: 0 auto;
+    width: 50%;
+}
+
+.v-application--wrap{
+    min-height: unset!important;
+}
+
+.container.tasks-container {
+    overflow: auto;
+    height: 268px;
+}
+
+.container.tasks-container div#app {
+    border: 1px solid gray;
+    border-radius: 15px;
+}
+
+.v-card__title.text-h5 {
+    justify-content: center;
+}
+
+button.v-btn .mdi-check-circle::before {
+    color: green;
+}
+
+i.v-icon.mdi.mdi-delete.theme--light {
+    color: #fff;
+}
+
+i.v-icon.mdi.mdi-check-circle.theme--light {
+    color: green;
+}
+
+i.v-icon.mdi.mdi-alpha-x-circle.theme--light {
+    color: red;
+}
+
+.data-container.col.col-12 {
+    display: flex;
+}
+
+body {
+  background: linear-gradient(180deg, rgb(89, 197, 107), rgb(48, 116, 105));
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+}
+
+.container.main-container {
+    background: #dfdddd;
+    padding: 0;
+}
+
+button.v-btn.v-btn--is-elevated.v-btn--has-bg.theme--light.v-size--default {
+    background: red;
+}
+
+.v-btn span.v-btn__content {
+    color: #ffff;
+    font-size: 10px;
+}
+
+button.v-btn.v-btn--is-elevated.v-btn--has-bg.theme--light.v-size--default {
+    height: 4vh;
+}
+
+button.task-counter.v-btn.v-btn--is-elevated.v-btn--has-bg.theme--light.v-size--default {
+    background: #3977c3;
+    border-radius: 20px;
+}
+
+span.v-btn__content .count {
+    background: #FFFF;
+    padding: 1px 5px 1px 5px;
+    color: #3977c3;
+    border-radius: 20px;
+}
+
+.todolist {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+h1.todolist-title {
+    font-size: 15vh;
+    font-family: 'Roboto';
+    color: #ffff;
+}
